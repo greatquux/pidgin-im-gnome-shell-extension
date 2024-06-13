@@ -27,6 +27,7 @@ import * as Util from 'resource:///org/gnome/shell/misc/util.js';
 import * as MessageTray from 'resource:///org/gnome/shell/ui/messageTray.js';
 import * as MessageList from 'resource:///org/gnome/shell/ui/messageList.js';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
+import * as Calendar from 'resource:///org/gnome/shell/ui/calendar.js';
 
 const SCROLLBACK_IMMEDIATE_TIME = 3 * 60;
 const SCROLLBACK_RECENT_TIME = 15 * 60;
@@ -267,7 +268,7 @@ class ChatLineBox extends St.BoxLayout {
 });
 
 const ChatNotificationBanner = GObject.registerClass(
-class ChatNotificationBanner extends MessageTray.NotificationBanner {
+class ChatNotificationBanner extends Calendar.NotificationMessage {
 	_init(notification) {
 		super._init(notification);
 		this._responseEntry = new St.Entry({
